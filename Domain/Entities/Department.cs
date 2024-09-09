@@ -7,7 +7,7 @@ public readonly partial struct DepartmentId;
 
 public class Department
 {
-    public required DepartmentId Id { get; init; }
-    public required int Code { get; init; }
-    public required string Name { get; set; }
+    public DepartmentId Id { get; init; }
+    public int Code { get; init; }
+    public string Name { get; set; }
 }

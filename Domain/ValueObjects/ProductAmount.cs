@@ -4,6 +4,6 @@ namespace Domain.ValueObjects;
 
 public class ProductAmount
 {
-    public required ProductId Id { get; init; }
-    public required double Amount { get; set; }    
+    public ProductId Id { get; init; }
+    public double Amount { get; set; }    
 }

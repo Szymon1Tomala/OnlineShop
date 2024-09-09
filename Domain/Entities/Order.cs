@@ -8,9 +8,9 @@ public readonly partial struct OrderId;
 
 public class Order
 {
-    public required OrderId Id { get; init; }
-    public required UserId UserId { get; init; }
+    public OrderId Id { get; init; }
+    public UserId UserId { get; init; }
     public IReadOnlyCollection<ProductAmount> ProductsAmounts { get; set; } = new List<ProductAmount>();
-    public required DateTime OrderDate { get; init; }
-    public required DateTime DeliveryDate { get; init; }
+    public DateTime OrderDate { get; init; }
+    public DateTime DeliveryDate { get; init; }
 }

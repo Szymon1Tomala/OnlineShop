@@ -7,8 +7,8 @@ public readonly partial struct ProductId;
 
 public class Product
 {
-    public required ProductId Id { get; init; }
-    public required int Code { get; set; }
-    public required string Name { get; set; }
-    public required double Price { get; set; }
+    public ProductId Id { get; init; }
+    public int Code { get; set; }
+    public string Name { get; set; }
+    public double Price { get; set; }
 }

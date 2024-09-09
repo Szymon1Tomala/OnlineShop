@@ -16,12 +16,12 @@ public class Employee
         DepartmentId = departmentId;
     }
 
-    public required EmployeeId Id { get; set; }
-    public required string FirstName { get; set; }
-    public required string SecondName { get; set; }
+    public EmployeeId Id { get; set; }
+    public string FirstName { get; set; }
+    public string SecondName { get; set; }
     public DepartmentId DepartmentId { get; set; }
-    public required string Email { get; init; }
-    public required PhoneNumber PhoneNumber {get; init; }
+    public string Email { get; init; }
+    public PhoneNumber PhoneNumber {get; init; }
     
 
     private static Employee Create(string firstName, string secondName, DepartmentId departmentId)
