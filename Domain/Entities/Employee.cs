@@ -1,3 +1,4 @@
+using Domain.ValueObjects;
 using StronglyTypedIds;
 
 namespace Domain.Entities;
@@ -19,6 +20,8 @@ public class Employee
     public required string FirstName { get; set; }
     public required string SecondName { get; set; }
     public DepartmentId DepartmentId { get; set; }
+    public required string Email { get; init; }
+    public required PhoneNumber PhoneNumber {get; init; }
     
 
     private static Employee Create(string firstName, string secondName, DepartmentId departmentId)
@@ -32,7 +35,7 @@ public class Employee
         {
             throw new ArgumentException("DepartmentId can' be empty");
         }
-        
+
         return new Employee(firstName, secondName, departmentId);
     }
 }
