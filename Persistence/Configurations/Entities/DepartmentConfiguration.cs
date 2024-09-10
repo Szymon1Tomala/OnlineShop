@@ -11,6 +11,10 @@ public class DepartmentConfiguration : IEntityTypeConfiguration<Department>
         builder.HasKey(x => x.Id);
 
         builder
+            .Property(x => x.Id)
+            .HasConversion(id => id.Value, value => new DepartmentId(value));
+
+        builder
             .Property(x => x.Code)
             .IsRequired()
             .HasMaxLength(100);

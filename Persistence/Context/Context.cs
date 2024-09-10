@@ -6,6 +6,10 @@ namespace Persistence.Context;
 
 public class Context : DbContext
 {
+    public Context(DbContextOptions<Context> options) : base(options)
+    {
+    }
+
     public DbSet<Department> Departments { get; set; }
     public DbSet<Employee> Employee { get; set; }
     public DbSet<Order> Order { get; set; }

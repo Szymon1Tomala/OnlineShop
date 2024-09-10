@@ -3,11 +3,12 @@ using StronglyTypedIds;
 
 namespace Domain.Entities;
 
-[StronglyTypedId]
+[StronglyTypedId(Template.Guid)]
 public readonly partial struct EmployeeId;
 
 public class Employee
 {
+    /*
     private Employee(string firstName, string lastName, DepartmentId departmentId)
     {
         Id = EmployeeId.New();
@@ -15,6 +16,7 @@ public class Employee
         LastName = lastName;
         DepartmentId = departmentId;
     }
+*/
 
     public EmployeeId Id { get; set; }
     public string FirstName { get; set; }
@@ -36,6 +38,7 @@ public class Employee
             throw new ArgumentException("DepartmentId can' be empty");
         }
 
-        return new Employee(firstName, secondName, departmentId);
+        return null;
+        //return new Employee(firstName, secondName, departmentId);
     }
 }
