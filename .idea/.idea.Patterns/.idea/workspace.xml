@@ -8,30 +8,44 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="5ec3ab49-5b23-4eb1-ba1c-89916931ff28" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.StronglyTypedIds/.idea/indexLayout.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.StronglyTypedIds/.idea/projectSettingsUpdater.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/.idea.StronglyTypedIds/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Console/Console.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Console/Program.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Domain.csproj" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/Employee.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Entities/Report.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Ids/DepartmentId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Domain/Ids/EmployeeId.cs" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/StronglyTypedIds.sln" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/DepartmentConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/EmployeeConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/OrderConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/ProductConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/UserConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/PhoneNumberConfiguration.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/ProductAmountConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Employee.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/Order.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Order.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/Entities/User.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/User.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/ValueObjects/PhoneNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ValueObjects/PhoneNumber.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Domain/ValueObjects/ProductAmount.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/ValueObjects/ProductAmount.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Patterns.sln" beforeDir="false" afterPath="$PROJECT_DIR$/Patterns.sln" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="DpaMonitoringSettings">
+    <option name="autoShow" value="false" />
+  </component>
+  <component name="Git.Merge.Settings">
+    <option name="BRANCH" value="01-modelling_base_entities" />
+  </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c75271a7fd85efcd27ac9034e39b67a982cc2ab9093ec2e14d130d3c33346/StronglyTypedIdAttribute.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 2
 }</component>
@@ -43,20 +57,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    ".NET Project.Console.executor": "Run",
+    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "02-create__persistence",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager">
     <configuration name="Console" type="DotNetProject" factoryName=".NET Project">
       <option name="EXE_PATH" value="" />
@@ -87,15 +103,29 @@
       <updated>1725821282942</updated>
       <workItem from="1725821296055" duration="917000" />
       <workItem from="1725914875717" duration="508000" />
+      <workItem from="1725920105290" duration="1829000" />
+      <workItem from="1726000813213" duration="1447000" />
     </task>
+    <task id="LOCAL-00001" summary="required modifiers removed">
+      <option name="closed" value="true" />
+      <created>1725920367325</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1725920367325</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
   <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
   <component name="VcsManagerConfiguration">
     <option name="LOCAL_CHANGES_DETAILS_PREVIEW_SHOWN" value="false" />
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+    <MESSAGE value="required modifiers removed" />
+    <option name="LAST_COMMIT_MESSAGE" value="required modifiers removed" />
   </component>
 </project>
