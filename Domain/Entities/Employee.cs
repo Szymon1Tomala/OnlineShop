@@ -8,20 +8,20 @@ public readonly partial struct EmployeeId;
 
 public class Employee
 {
-    private Employee(string firstName, string secondName, DepartmentId departmentId)
+    private Employee(string firstName, string lastName, DepartmentId departmentId)
     {
         Id = EmployeeId.New();
         FirstName = firstName;
-        SecondName = secondName;
+        LastName = lastName;
         DepartmentId = departmentId;
     }
 
     public EmployeeId Id { get; set; }
     public string FirstName { get; set; }
-    public string SecondName { get; set; }
+    public string LastName { get; set; }
     public DepartmentId DepartmentId { get; set; }
     public string Email { get; init; }
-    public PhoneNumber PhoneNumber {get; init; }
+    public PhoneNumberId PhoneNumberId {get; init; }
     
 
     private static Employee Create(string firstName, string secondName, DepartmentId departmentId)
