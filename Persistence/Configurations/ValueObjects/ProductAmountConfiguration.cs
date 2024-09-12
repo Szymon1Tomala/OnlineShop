@@ -21,7 +21,11 @@ public class ProductAmountConfiguration : IEntityTypeConfiguration<ProductAmount
 
         builder
             .Property(x => x.ProductId)
-            .HasConversion(id => id.Value, value => new ProductId(value))
             .IsRequired();
+
+        builder
+            .HasOne<Product>()
+            .WithMany()
+            .HasForeignKey(x => x.ProductId);
     }
 }

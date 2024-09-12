@@ -10,11 +10,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ec3ab49-5b23-4eb1-ba1c-89916931ff28" name="Changes" comment="configurations fixed">
+    <list default="true" id="5ec3ab49-5b23-4eb1-ba1c-89916931ff28" name="Changes" comment="cs removed from appsettings">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/appsettings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/OrderConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/OrderConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/ProductAmountConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/ProductAmountConfiguration.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,8 +42,11 @@
     <setting file="file://$PROJECT_DIR$/Console/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/Employee.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="mock://C:/Users/szymo/RiderProjects/StronglyTypedIds/Persistence/Context/Context.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="mock://C:/Users/szymo/RiderProjects/StronglyTypedIds/WebApi/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/szymo/RiderProjects/StronglyTypedIds/WebApi/Program.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/szymo/RiderProjects/StronglyTypedIds/WebApi/appsettings.Development.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/szymo/RiderProjects/StronglyTypedIds/WebApi/appsettings.json" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/szymo/RiderProjects/StronglyTypedIds/WebApi/appsettings.json" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -113,7 +115,7 @@
       <workItem from="1726097757260" duration="2434000" />
       <workItem from="1726101876324" duration="482000" />
       <workItem from="1726102547594" duration="564000" />
-      <workItem from="1726151485690" duration="394000" />
+      <workItem from="1726151485690" duration="2235000" />
     </task>
     <task id="LOCAL-00001" summary="required modifiers removed">
       <option name="closed" value="true" />
@@ -155,7 +157,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726099390219</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="cs removed from appsettings">
+      <option name="closed" value="true" />
+      <created>1726152162994</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1726152162994</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -171,6 +181,7 @@
     <MESSAGE value="ef core design and tools installed" />
     <MESSAGE value="db context added" />
     <MESSAGE value="configurations fixed" />
-    <option name="LAST_COMMIT_MESSAGE" value="configurations fixed" />
+    <MESSAGE value="cs removed from appsettings" />
+    <option name="LAST_COMMIT_MESSAGE" value="cs removed from appsettings" />
   </component>
 </project>

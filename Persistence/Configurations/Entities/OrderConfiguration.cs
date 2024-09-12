@@ -17,7 +17,6 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
 
         builder
             .Property(x => x.UserId)
-            .HasConversion(id => id.Value, value => new UserId(value))
             .IsRequired();
 
         builder
@@ -27,5 +26,10 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
         builder
             .HasMany(x => x.ProductAmounts)
             .WithOne();
+
+        builder
+            .HasOne<User>()
+            .WithMany()
+            .HasForeignKey(x => x.UserId);
     }
 }
