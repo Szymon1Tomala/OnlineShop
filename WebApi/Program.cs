@@ -6,11 +6,10 @@ var builder = WebApplication.CreateBuilder(args);
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
-builder.Services.AddSqlServer<DatabaseContext>("Server=DESKTOP-80TS3MU\\SQLEXPRESS;Database=model;User Id=DESKTOP-80TS3MU\\szymo;Password=;");
+builder.Services.AddSqlServer<DatabaseContext>("Server=localhost;Database=Shop;Trusted_Connection=True;TrustServerCertificate=True;");
 builder.Services.AddDbContext<DatabaseContext>();
 
 var app = builder.Build();
-
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
 {

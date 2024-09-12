@@ -10,15 +10,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ec3ab49-5b23-4eb1-ba1c-89916931ff28" name="Changes" comment="">
+    <list default="true" id="5ec3ab49-5b23-4eb1-ba1c-89916931ff28" name="Changes" comment="configurations fixed">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/EmployeeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/EmployeeConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/OrderConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/OrderConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/ProductConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/ProductConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/UserConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/UserConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/PhoneNumberConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/PhoneNumberConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/ProductAmountConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/ProductAmountConfiguration.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Context/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Context/Context.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/appsettings.Development.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WebApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,10 +38,13 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/272f7fa8ba8fe1496a488d5eda2dbd4f6cd182c1430c3cc7822b83dbf64b4b2/Process.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5c512bcddfe0a529da5f525cbf8fcaee3ce40e1a4706acad85a9544fbe42af/ModelBuilder.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/b2b836b4a16ec2a5a76cf2a2296c92cb3f2c47f84ea33e8755011472abb89/Assembly.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c75271a7fd85efcd27ac9034e39b67a982cc2ab9093ec2e14d130d3c33346/StronglyTypedIdAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Console/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/Employee.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/szymo/RiderProjects/StronglyTypedIds/Persistence/Context/Context.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock://C:/Users/szymo/RiderProjects/StronglyTypedIds/WebApi/Program.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -111,7 +110,10 @@
       <workItem from="1725920105290" duration="1829000" />
       <workItem from="1726000813213" duration="1447000" />
       <workItem from="1726097036412" duration="628000" />
-      <workItem from="1726097757260" duration="581000" />
+      <workItem from="1726097757260" duration="2434000" />
+      <workItem from="1726101876324" duration="482000" />
+      <workItem from="1726102547594" duration="564000" />
+      <workItem from="1726151485690" duration="394000" />
     </task>
     <task id="LOCAL-00001" summary="required modifiers removed">
       <option name="closed" value="true" />
@@ -145,7 +147,15 @@
       <option name="project" value="LOCAL" />
       <updated>1726005707263</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="configurations fixed">
+      <option name="closed" value="true" />
+      <created>1726099390219</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1726099390219</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -160,6 +170,7 @@
     <MESSAGE value="missing csproj added" />
     <MESSAGE value="ef core design and tools installed" />
     <MESSAGE value="db context added" />
-    <option name="LAST_COMMIT_MESSAGE" value="db context added" />
+    <MESSAGE value="configurations fixed" />
+    <option name="LAST_COMMIT_MESSAGE" value="configurations fixed" />
   </component>
 </project>

@@ -17,4 +17,13 @@
       <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="8.0.8" />
     </ItemGroup>
 
+    <ItemGroup>
+      <Folder Include="Migrations\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Compile Remove="Migrations\20240912001006_Initial.cs" />
+      <Compile Remove="Migrations\20240912001006_Initial.Designer.cs" />
+    </ItemGroup>
+
 </Project>
