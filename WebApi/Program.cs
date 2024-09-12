@@ -1,4 +1,5 @@
 using Persistence.Context;
+using WebApi.Controllers;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -18,5 +19,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
+
+app.MapEmployeeEndpoints();
 
 app.Run();
