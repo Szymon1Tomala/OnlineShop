@@ -1,5 +1,5 @@
 using WebApi.Requests;
-using WebApi.Responses;
+using Application.Responses;
 
 namespace WebApi.Controllers;
 

@@ -28,7 +28,7 @@ public class Employee
     public PhoneNumber PhoneNumber { get; set; }
     
 
-    private static Employee Create(string firstName, string secondName, DepartmentId departmentId)
+    public static Employee Create(string firstName, string secondName, DepartmentId departmentId)
     {
         if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(secondName))
         {
