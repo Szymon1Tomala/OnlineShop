@@ -12,6 +12,10 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
         builder.HasKey(e => e.Id);
         
         builder
+            .Property(x => x.Id)
+            .HasConversion(id => id.Value, value => new EmployeeId(value));
+        
+        builder
             .Property(x => x.FirstName)
             .IsRequired()
             .HasMaxLength(100);

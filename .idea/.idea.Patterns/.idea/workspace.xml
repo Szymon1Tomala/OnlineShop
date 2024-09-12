@@ -10,16 +10,15 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="5ec3ab49-5b23-4eb1-ba1c-89916931ff28" name="Changes" comment="db context added">
+    <list default="true" id="5ec3ab49-5b23-4eb1-ba1c-89916931ff28" name="Changes" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Patterns/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Domain/Entities/Employee.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Domain/Entities/Employee.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/DepartmentConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/DepartmentConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/EmployeeConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/EmployeeConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/OrderConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/OrderConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/ProductConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/ProductConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/Entities/UserConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/Entities/UserConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/PhoneNumberConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/PhoneNumberConfiguration.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/ProductAmountConfiguration.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Configurations/ValueObjects/ProductAmountConfiguration.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Persistence/Context/Context.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Context/Context.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Persistence/Persistence.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/Persistence/Persistence.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/WebApi.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/WebApi.csproj" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/appsettings.Development.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/appsettings.Development.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/WebApi/appsettings.json" beforeDir="false" afterPath="$PROJECT_DIR$/WebApi/appsettings.json" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -42,12 +41,11 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/272f7fa8ba8fe1496a488d5eda2dbd4f6cd182c1430c3cc7822b83dbf64b4b2/Process.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/5c512bcddfe0a529da5f525cbf8fcaee3ce40e1a4706acad85a9544fbe42af/ModelBuilder.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/c75271a7fd85efcd27ac9034e39b67a982cc2ab9093ec2e14d130d3c33346/StronglyTypedIdAttribute.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Console/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/Employee.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Domain/Entities/User.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="vcs://Console/Console.csproj" root0="FORCE_HIGHLIGHTING" />
-    <setting file="vcs://Domain/Domain.csproj" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -61,23 +59,23 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    ".NET Launch Settings Profile.WebApi: http.executor": "Run",
-    ".NET Project.Console.executor": "Run",
-    "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "022-create__persistence",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;.NET Launch Settings Profile.WebApi: http.executor&quot;: &quot;Run&quot;,
+    &quot;.NET Project.Console.executor&quot;: &quot;Run&quot;,
+    &quot;ASKED_SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;022-create__persistence&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager">
     <configuration name="WebApi: http" type="LaunchSettings" factoryName=".NET Launch Settings Profile" temporary="true">
       <option name="LAUNCH_PROFILE_PROJECT_FILE_PATH" value="$PROJECT_DIR$/WebApi/WebApi.csproj" />
@@ -112,6 +110,8 @@
       <workItem from="1725914875717" duration="508000" />
       <workItem from="1725920105290" duration="1829000" />
       <workItem from="1726000813213" duration="1447000" />
+      <workItem from="1726097036412" duration="628000" />
+      <workItem from="1726097757260" duration="581000" />
     </task>
     <task id="LOCAL-00001" summary="required modifiers removed">
       <option name="closed" value="true" />

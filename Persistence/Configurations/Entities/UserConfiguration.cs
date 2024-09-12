@@ -12,6 +12,10 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
         builder.HasKey(x => x.Id);
         
         builder
+            .Property(x => x.Id)
+            .HasConversion(id => id.Value, value => new UserId(value));
+        
+        builder
             .Property(x => x.FirstName)
             .IsRequired()
             .HasMaxLength(100);

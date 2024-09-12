@@ -9,6 +9,10 @@ public class ProductConfiguration : IEntityTypeConfiguration<Product>
     public void Configure(EntityTypeBuilder<Product> builder)
     {
         builder.HasKey(x => x.Id);
+        
+        builder
+            .Property(x => x.Id)
+            .HasConversion(id => id.Value, value => new ProductId(value));
 
         builder
             .Property(x => x.Code)

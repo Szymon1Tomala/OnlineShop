@@ -10,7 +10,7 @@ public class Order
 {
     public OrderId Id { get; init; }
     public UserId UserId { get; init; }
-    public IReadOnlyCollection<ProductAmountId> ProductAmountIds { get; init; } = new List<ProductAmountId>();
+    public IReadOnlyCollection<ProductAmount> ProductAmounts { get; init; } = new List<ProductAmount>();
     public DateTime OrderDate { get; init; }
     public DateTime DeliveryDate { get; init; }
 }

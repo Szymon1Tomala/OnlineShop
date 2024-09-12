@@ -10,6 +10,10 @@ public class ProductAmountConfiguration : IEntityTypeConfiguration<ProductAmount
     public void Configure(EntityTypeBuilder<ProductAmount> builder)
     {
         builder.HasKey(x => x.Id);
+        
+        builder
+            .Property(x => x.Id)
+            .HasConversion(id => id.Value, value => new ProductAmountId(value));
 
         builder
             .Property(x => x.Amount)
@@ -17,11 +21,7 @@ public class ProductAmountConfiguration : IEntityTypeConfiguration<ProductAmount
 
         builder
             .Property(x => x.ProductId)
+            .HasConversion(id => id.Value, value => new ProductId(value))
             .IsRequired();
-
-        builder
-            .HasOne<Order>()
-            .WithMany()
-            .HasForeignKey(x => x.Id);
     }
 }

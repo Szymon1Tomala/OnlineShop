@@ -9,6 +9,10 @@ public class PhoneNumberConfiguration : IEntityTypeConfiguration<PhoneNumber>
     public void Configure(EntityTypeBuilder<PhoneNumber> builder)
     {
         builder.HasKey(x => x.Id);
+        
+        builder
+            .Property(x => x.Id)
+            .HasConversion(id => id.Value, value => new PhoneNumberId(value));
 
         builder
             .Property(x => x.DirectNumber)
