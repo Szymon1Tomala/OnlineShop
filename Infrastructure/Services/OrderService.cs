@@ -19,7 +19,13 @@ public class OrderService(DatabaseContext context) : IOrderService
                 Amount = x.Amount
             });
 
+        var order = Order.Create(userId, orderDate, deliveryDate);
+
+        await context.Orders.AddAsync(order, cancellationToken);
         await context.ProductAmounts.AddRangeAsync(productAmountsToAdd, cancellationToken);
+        await context.SaveChangesAsync(cancellationToken);
+        
+        return order.Id;
     }
 
     public Task<OrderResponse?> Get(OrderId id, CancellationToken cancellationToken)
