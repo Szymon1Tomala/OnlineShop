@@ -8,15 +8,15 @@ public readonly partial struct EmployeeId;
 
 public class Employee
 {
-    /*
-    private Employee(string firstName, string lastName, DepartmentId departmentId)
+    private Employee(string firstName, string lastName, DepartmentId departmentId, string email, PhoneNumberId phoneNumberId)
     {
         Id = EmployeeId.New();
         FirstName = firstName;
         LastName = lastName;
         DepartmentId = departmentId;
+        Email = email;
+        PhoneNumberId = phoneNumberId;
     }
-*/
 
     public EmployeeId Id { get; set; }
     public string FirstName { get; set; }
@@ -28,19 +28,28 @@ public class Employee
     public PhoneNumber PhoneNumber { get; set; }
     
 
-    public static Employee Create(string firstName, string secondName, DepartmentId departmentId)
+    public static Employee Create(string firstName, string secondName, DepartmentId departmentId, string email, PhoneNumberId phoneNumberId)
     {
         if (string.IsNullOrWhiteSpace(firstName) || string.IsNullOrWhiteSpace(secondName))
         {
-            throw new ArgumentException("First Name and Second Name can' be null or empty");
+            throw new ArgumentException("First Name and Last Name can't be null or empty");
+        }
+
+        if (string.IsNullOrWhiteSpace(email))
+        {
+            throw new ArgumentException("Email can't be null or empty");
         }
 
         if (departmentId.Value == Guid.Empty)
         {
-            throw new ArgumentException("DepartmentId can' be empty");
+            throw new ArgumentException("DepartmentId can't be empty");
+        }
+        
+        if (phoneNumberId.Value == Guid.Empty)
+        {
+            throw new ArgumentException("PhoneNumberId can't be empty");
         }
 
-        return null;
-        //return new Employee(firstName, secondName, departmentId);
+        return new Employee(firstName, secondName, departmentId, email, phoneNumberId);
     }
 }

@@ -1,6 +1,7 @@
 using Application.Interfaces.Services;
 using Application.Responses;
 using Domain.Entities;
+using Domain.ValueObjects;
 using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
 
@@ -8,9 +9,10 @@ namespace Infrastructure.Services;
 
 public class EmployeeService(DatabaseContext context) : IEmployeeService
 {
-    public async Task<EmployeeId> Add(string firstName, string lastName, DepartmentId departmentId, CancellationToken cancellationToken)
+    public async Task<EmployeeId> Add(string firstName, string lastName, DepartmentId departmentId, string email, 
+        PhoneNumberId phoneNumberId, CancellationToken cancellationToken)
     {
-        var employee = Employee.Create(firstName, lastName, departmentId);
+        var employee = Employee.Create(firstName, lastName, departmentId, email, phoneNumberId);
         
         await context.Employees.AddAsync(employee, cancellationToken);
         await context.SaveChangesAsync(cancellationToken);

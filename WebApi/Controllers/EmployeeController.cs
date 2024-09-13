@@ -1,5 +1,8 @@
-using WebApi.Requests;
+using Application.Interfaces.Services;
 using Application.Responses;
+using WebApi.Requests;
+using Domain.Entities;
+using Domain.ValueObjects;
 
 namespace WebApi.Controllers;
 
@@ -9,26 +12,41 @@ public static class EmployeeController
     
     public static void MapEmployeeEndpoints(this WebApplication app)
     {
-        app.MapGet($"{EmployeePrefix}/{{id:guid}}", (Guid id) =>
+        app.MapGet($"{EmployeePrefix}/{{id:guid}}", async 
+            (
+                IEmployeeService service, 
+                Guid id,
+                CancellationToken cancellationToken
+            ) =>
         {
-            var employee = // to do _employeeService.Get(id);
-                new EmployeeResponse(id, "Michael", "Thompson", "michael@gmail.com");
+            var employee = await service.Get(new EmployeeId(id), cancellationToken);
             
-            return Results.Ok(employee);
-        });
+            return employee is not null ? Results.Ok(employee) : Results.NotFound();
+        }).Produces<EmployeeResponse>();
 
-        app.MapPost($"{EmployeePrefix}/", (AddEmployeeRequest request) =>
+        app.MapPost($"{EmployeePrefix}/", async 
+            (
+                IEmployeeService service, 
+                AddEmployeeRequest request, 
+                CancellationToken cancellationToken
+            ) =>
         {
-            var id = // _employeeService.Add(request);
-                Guid.NewGuid();
-            return Results.Ok(id);
-        });
+            var id = await service.Add(request.FirstName, request.LastName, new DepartmentId(request.DepartmentId), 
+                request.Email, new PhoneNumberId(request.PhoneNumberId), cancellationToken);
 
-        app.MapDelete($"{EmployeePrefix}/{{id:guid}}", (Guid id) =>
+            return Results.Ok(id);
+        }).Produces<Guid>();
+
+        app.MapDelete($"{EmployeePrefix}/{{id:guid}}", async 
+            (
+                Guid id, 
+                IEmployeeService service, 
+                CancellationToken cancellationToken
+            ) =>
         {
-            // _employeeService.Delete(id);
+            await service.Delete(new EmployeeId(id), cancellationToken);
 
-            return Results.Ok(id);
+            return Results.Ok();
         });
     }
 
