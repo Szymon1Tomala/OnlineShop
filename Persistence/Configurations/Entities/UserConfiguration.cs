@@ -35,8 +35,8 @@ public class UserConfiguration : IEntityTypeConfiguration<User>
             .IsRequired();
         
         builder
-            .HasOne<PhoneNumber>()
-            .WithMany()
-            .HasForeignKey(x => x.PhoneNumberId);
+            .HasOne(x => x.PhoneNumber)
+            .WithOne(x => x.User)
+            .HasForeignKey<User>(x => x.PhoneNumberId);
     }
 }

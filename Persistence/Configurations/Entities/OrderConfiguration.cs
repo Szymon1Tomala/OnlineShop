@@ -24,12 +24,13 @@ public class OrderConfiguration : IEntityTypeConfiguration<Order>
             .IsRequired();
 
         builder
-            .HasMany(x => x.ProductAmounts)
-            .WithOne();
+            .HasOne(x => x.User)
+            .WithMany()
+            .HasForeignKey(x => x.UserId);
 
         builder
-            .HasOne<User>()
-            .WithMany()
+            .HasOne(x => x.User)
+            .WithMany(x => x.Orders)
             .HasForeignKey(x => x.UserId);
     }
 }

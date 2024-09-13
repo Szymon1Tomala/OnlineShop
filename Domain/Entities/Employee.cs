@@ -22,8 +22,10 @@ public class Employee
     public string FirstName { get; set; }
     public string LastName { get; set; }
     public DepartmentId DepartmentId { get; set; }
+    public Department Department { get; set; }
     public string Email { get; init; }
     public PhoneNumberId PhoneNumberId {get; init; }
+    public PhoneNumber PhoneNumber { get; set; }
     
 
     private static Employee Create(string firstName, string secondName, DepartmentId departmentId)

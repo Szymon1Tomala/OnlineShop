@@ -13,4 +13,6 @@ public class User
     public string LastName { get; init; }
     public string Email { get; init; }
     public PhoneNumberId PhoneNumberId {get; init; }
+    public PhoneNumber PhoneNumber { get; init; }
+    public ICollection<Order> Orders { get; set; } = new List<Order>();
 }

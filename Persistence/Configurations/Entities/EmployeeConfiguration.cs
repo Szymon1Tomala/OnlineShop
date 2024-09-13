@@ -38,14 +38,13 @@ public class EmployeeConfiguration : IEntityTypeConfiguration<Employee>
             .Property(x => x.DepartmentId)
             .IsRequired();
 
-
         builder
-            .HasOne<PhoneNumber>()
-            .WithMany()
-            .HasForeignKey(x => x.PhoneNumberId);
+            .HasOne(x => x.PhoneNumber)
+            .WithOne(x => x.Employee)
+            .HasForeignKey<Employee>(x => x.PhoneNumberId);
         
         builder
-            .HasOne<Department>()
+            .HasOne(x => x.Department)
             .WithMany()
             .HasForeignKey(x => x.DepartmentId);
     }

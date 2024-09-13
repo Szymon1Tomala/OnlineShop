@@ -24,7 +24,12 @@ public class ProductAmountConfiguration : IEntityTypeConfiguration<ProductAmount
             .IsRequired();
 
         builder
-            .HasOne<Product>()
+            .HasOne(x => x.Order)
+            .WithMany(x => x.ProductAmounts)
+            .HasForeignKey(x => x.OrderId);
+        
+        builder
+            .HasOne(x => x.Product)
             .WithMany()
             .HasForeignKey(x => x.ProductId);
     }

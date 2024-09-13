@@ -10,5 +10,4 @@ public class Product
     public ProductId Id { get; init; }
     public int Code { get; set; }
     public string Name { get; set; }
-    public double Price { get; set; }
 }

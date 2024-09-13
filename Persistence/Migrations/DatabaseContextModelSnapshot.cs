@@ -71,9 +71,10 @@ namespace Persistence.Migrations
 
                     b.HasIndex("DepartmentId");
 
-                    b.HasIndex("PhoneNumberId");
+                    b.HasIndex("PhoneNumberId")
+                        .IsUnique();
 
-                    b.ToTable("Employee");
+                    b.ToTable("Employees");
                 });
 
             modelBuilder.Entity("Domain.Entities.Order", b =>
@@ -94,7 +95,7 @@ namespace Persistence.Migrations
 
                     b.HasIndex("UserId");
 
-                    b.ToTable("Order");
+                    b.ToTable("Orders");
                 });
 
             modelBuilder.Entity("Domain.Entities.Product", b =>
@@ -111,12 +112,9 @@ namespace Persistence.Migrations
                         .HasMaxLength(100)
                         .HasColumnType("nvarchar(100)");
 
-                    b.Property<double>("Price")
-                        .HasColumnType("float");
-
                     b.HasKey("Id");
 
-                    b.ToTable("Product");
+                    b.ToTable("Products");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>
@@ -144,9 +142,10 @@ namespace Persistence.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("PhoneNumberId");
+                    b.HasIndex("PhoneNumberId")
+                        .IsUnique();
 
-                    b.ToTable("User");
+                    b.ToTable("Users");
                 });
 
             modelBuilder.Entity("Domain.ValueObjects.PhoneNumber", b =>
@@ -174,7 +173,7 @@ namespace Persistence.Migrations
                     b.Property<double>("Amount")
                         .HasColumnType("float");
 
-                    b.Property<Guid?>("OrderId")
+                    b.Property<Guid>("OrderId")
                         .HasColumnType("uniqueidentifier");
 
                     b.Property<Guid>("ProductId")
@@ -191,53 +190,81 @@ namespace Persistence.Migrations
 
             modelBuilder.Entity("Domain.Entities.Employee", b =>
                 {
-                    b.HasOne("Domain.Entities.Department", null)
+                    b.HasOne("Domain.Entities.Department", "Department")
                         .WithMany()
                         .HasForeignKey("DepartmentId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
 
-                    b.HasOne("Domain.ValueObjects.PhoneNumber", null)
-                        .WithMany()
-                        .HasForeignKey("PhoneNumberId")
+                    b.HasOne("Domain.ValueObjects.PhoneNumber", "PhoneNumber")
+                        .WithOne("Employee")
+                        .HasForeignKey("Domain.Entities.Employee", "PhoneNumberId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Department");
+
+                    b.Navigation("PhoneNumber");
                 });
 
             modelBuilder.Entity("Domain.Entities.Order", b =>
                 {
-                    b.HasOne("Domain.Entities.User", null)
-                        .WithMany()
+                    b.HasOne("Domain.Entities.User", "User")
+                        .WithMany("Orders")
                         .HasForeignKey("UserId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("User");
                 });
 
             modelBuilder.Entity("Domain.Entities.User", b =>
                 {
-                    b.HasOne("Domain.ValueObjects.PhoneNumber", null)
-                        .WithMany()
-                        .HasForeignKey("PhoneNumberId")
+                    b.HasOne("Domain.ValueObjects.PhoneNumber", "PhoneNumber")
+                        .WithOne("User")
+                        .HasForeignKey("Domain.Entities.User", "PhoneNumberId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("PhoneNumber");
                 });
 
             modelBuilder.Entity("Domain.ValueObjects.ProductAmount", b =>
                 {
-                    b.HasOne("Domain.Entities.Order", null)
+                    b.HasOne("Domain.Entities.Order", "Order")
                         .WithMany("ProductAmounts")
-                        .HasForeignKey("OrderId");
+                        .HasForeignKey("OrderId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
 
-                    b.HasOne("Domain.Entities.Product", null)
+                    b.HasOne("Domain.Entities.Product", "Product")
                         .WithMany()
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();
+
+                    b.Navigation("Order");
+
+                    b.Navigation("Product");
                 });
 
             modelBuilder.Entity("Domain.Entities.Order", b =>
                 {
                     b.Navigation("ProductAmounts");
+                });
+
+            modelBuilder.Entity("Domain.Entities.User", b =>
+                {
+                    b.Navigation("Orders");
+                });
+
+            modelBuilder.Entity("Domain.ValueObjects.PhoneNumber", b =>
+                {
+                    b.Navigation("Employee")
+                        .IsRequired();
+
+                    b.Navigation("User")
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }
