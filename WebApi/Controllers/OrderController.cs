@@ -1,5 +1,7 @@
+using Application.Interfaces.Services;
 using WebApi.Requests;
 using Application.Responses;
+using Domain.Entities;
 
 namespace WebApi.Controllers;
 
@@ -11,16 +13,25 @@ public static class OrderController
     {
         app.MapGet($"{Prefix}/{{id:guid}}", (Guid id) =>
         {
-            var order = // to do _orderService.Get(id);
-                new OrderResponse(id, new UserResponse(), new List<ProductAmountResponse>(), DateTime.Today, DateTime.Today.AddDays(7));
+            var order = await orderService.Get(id);
+                
             
             return Results.Ok(order);
         });
 
-        app.MapPost($"{Prefix}/", (AddOrderRequest request) =>
+        app.MapPost($"{Prefix}/", async 
+        (
+            AddOrderRequest request,
+            IOrderService service, 
+            CancellationToken cancellationToken
+        ) =>
         {
-            var id = // _orderService.Add(request);
-                Guid.NewGuid();
+            var productAmounts = request.ProductAmounts
+                .Select(x => (new ProductId(x.ProductId), x.Amount));
+            
+            var id = service.Add(new UserId(request.UserId), productAmounts, request.OrderDate, 
+                request.DeliveryDate, cancellationToken);
+            
             return Results.Ok(id);
         });
 

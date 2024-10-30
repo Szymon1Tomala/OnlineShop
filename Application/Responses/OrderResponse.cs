@@ -1,3 +1,3 @@
 namespace Application.Responses;
 
-public record OrderResponse(Guid Id, UserResponse User, IReadOnlyCollection<ProductAmountResponse> ProductAmounts, DateTime OrderDate, DateTime DeliveryDate);
+public record OrderResponse(Guid Id, Guid UserId, DateTime OrderDate, DateTime DeliveryDate);

@@ -2,13 +2,14 @@ using Application.Interfaces.Services;
 using Application.Responses;
 using Domain.Entities;
 using Domain.ValueObjects;
+using Microsoft.EntityFrameworkCore;
 using Persistence.Context;
 
 namespace Infrastructure.Services;
 
 public class OrderService(DatabaseContext context) : IOrderService
 {
-    public async Task<OrderId> Add(UserId userId, ICollection<(ProductId ProductId, double Amount)> productAmounts, 
+    public async Task<OrderId> Add(UserId userId, IEnumerable<(ProductId ProductId, double Amount)> productAmounts, 
         DateTime orderDate, DateTime deliveryDate, CancellationToken cancellationToken)
     {
         var productAmountsToAdd = productAmounts
@@ -28,13 +29,22 @@ public class OrderService(DatabaseContext context) : IOrderService
         return order.Id;
     }
 
-    public Task<OrderResponse?> Get(OrderId id, CancellationToken cancellationToken)
+    public async Task<OrderResponse?> Get(OrderId id, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        var order = await context.Orders.FindAsync(new object?[] { id }, cancellationToken);
+
+        if (order is null)
+        {
+            return null;
+        }
+
+        return new OrderResponse(order.Id.Value, order.UserId.Value, order.OrderDate, order.DeliveryDate);
     }
 
-    public Task Delete(OrderId id, CancellationToken cancellationToken)
+    public async Task Delete(OrderId id, CancellationToken cancellationToken)
     {
-        throw new NotImplementedException();
+        await context.Orders
+            .Where(x => x.Id == id)
+            .ExecuteDeleteAsync(cancellationToken);
     }
 }
