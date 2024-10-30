@@ -1,3 +1,3 @@
     namespace Application.Responses;
     
-    public record ProductResponse(Guid Id, string Name, string Code);
+    public record ProductResponse(Guid Id, int Code, string Name);

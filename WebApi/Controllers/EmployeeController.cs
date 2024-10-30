@@ -3,6 +3,7 @@ using Application.Responses;
 using WebApi.Requests;
 using Domain.Entities;
 using Domain.ValueObjects;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
@@ -13,11 +14,11 @@ public static class EmployeeController
     public static void MapEmployeeEndpoints(this WebApplication app)
     {
         app.MapGet($"{EmployeePrefix}/{{id:guid}}", async 
-            (
-                IEmployeeService service, 
-                Guid id,
-                CancellationToken cancellationToken
-            ) =>
+        (
+            [FromRoute] Guid id,
+            [FromServices] IEmployeeService service, 
+            CancellationToken cancellationToken
+        ) =>
         {
             var employee = await service.Get(new EmployeeId(id), cancellationToken);
             
@@ -25,11 +26,11 @@ public static class EmployeeController
         }).Produces<EmployeeResponse>();
 
         app.MapPost($"{EmployeePrefix}/", async 
-            (
-                IEmployeeService service, 
-                AddEmployeeRequest request, 
-                CancellationToken cancellationToken
-            ) =>
+        (
+            [FromBody] AddEmployeeRequest request, 
+            [FromServices] IEmployeeService service, 
+            CancellationToken cancellationToken
+        ) =>
         {
             var id = await service.Add(request.FirstName, request.LastName, new DepartmentId(request.DepartmentId), 
                 request.Email, new PhoneNumberId(request.PhoneNumberId), cancellationToken);
@@ -38,15 +39,15 @@ public static class EmployeeController
         }).Produces<Guid>();
 
         app.MapDelete($"{EmployeePrefix}/{{id:guid}}", async 
-            (
-                Guid id, 
-                IEmployeeService service, 
-                CancellationToken cancellationToken
-            ) =>
+        (
+            [FromRoute] Guid id, 
+            [FromServices] IEmployeeService service, 
+            CancellationToken cancellationToken
+        ) =>
         {
-            await service.Delete(new EmployeeId(id), cancellationToken);
+            var wasDeleted = await service.Delete(new EmployeeId(id), cancellationToken);
 
-            return Results.Ok();
+            return wasDeleted ? Results.Ok() : Results.NotFound();
         });
     }
 

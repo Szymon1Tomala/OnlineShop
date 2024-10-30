@@ -11,6 +11,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddTransient<IEmployeeService, EmployeeService>();
+builder.Services.AddTransient<IOrderService, OrderService>();
 
 builder.Services.AddSqlServer<DatabaseContext>("Server=localhost;Database=Shop;Trusted_Connection=True;TrustServerCertificate=True;");
 builder.Services.AddDbContext<DatabaseContext>();

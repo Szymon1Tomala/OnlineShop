@@ -2,6 +2,7 @@ using Application.Interfaces.Services;
 using WebApi.Requests;
 using Application.Responses;
 using Domain.Entities;
+using Microsoft.AspNetCore.Mvc;
 
 namespace WebApi.Controllers;
 
@@ -11,35 +12,44 @@ public static class OrderController
     
     public static void MapOrderEndpoints(this WebApplication app)
     {
-        app.MapGet($"{Prefix}/{{id:guid}}", (Guid id) =>
+        app.MapGet($"{Prefix}/{{id:guid}}", async 
+        (
+            [FromRoute] Guid id,
+            [FromServices] IOrderService service,
+            CancellationToken cancellationToken
+        ) =>
         {
-            var order = await orderService.Get(id);
-                
+            var order = await service.Get(new OrderId(id), cancellationToken);
             
-            return Results.Ok(order);
+            return order is not null ? Results.Ok(order) : Results.NotFound();
         });
 
         app.MapPost($"{Prefix}/", async 
         (
-            AddOrderRequest request,
-            IOrderService service, 
+            [FromBody] AddOrderRequest request,
+            [FromServices] IOrderService service, 
             CancellationToken cancellationToken
         ) =>
         {
             var productAmounts = request.ProductAmounts
                 .Select(x => (new ProductId(x.ProductId), x.Amount));
             
-            var id = service.Add(new UserId(request.UserId), productAmounts, request.OrderDate, 
+            var id = await service.Add(new UserId(request.UserId), productAmounts, request.OrderDate, 
                 request.DeliveryDate, cancellationToken);
             
             return Results.Ok(id);
         });
 
-        app.MapDelete($"{Prefix}/{{id:guid}}", (Guid id) =>
+        app.MapDelete($"{Prefix}/{{id:guid}}", async
+        (
+            [FromRoute] Guid id,
+            [FromServices] IOrderService service,
+            CancellationToken cancellationToken
+        ) =>
         {
-            // _orderService.Delete(id);
+            var wasDeleted = await service.Delete(new OrderId(id), cancellationToken);
 
-            return Results.Ok(id);
+            return wasDeleted ? Results.Ok() : Results.NotFound();
         });
     }
 

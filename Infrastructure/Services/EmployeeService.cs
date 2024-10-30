@@ -30,10 +30,12 @@ public class EmployeeService(DatabaseContext context) : IEmployeeService
         return new EmployeeResponse(employee.Id.Value, employee.FirstName, employee.LastName, employee.Email);
     }
 
-    public async Task Delete(EmployeeId id, CancellationToken cancellationToken)
+    public async Task<bool> Delete(EmployeeId id, CancellationToken cancellationToken)
     {
-        await context.Employees
+        var result = await context.Employees
             .Where(x => x.Id == id)
             .ExecuteDeleteAsync(cancellationToken);
+        
+        return result > 0;
     }
 }
